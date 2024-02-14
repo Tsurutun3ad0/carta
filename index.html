@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta de San Valentín</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="envlope-wrapper">
+    <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+            <div class="words line1"></div>
+            <div class="words line2"></div>
+            <div class="words line3"></div>
+            <div class="words line4"></div>
+        </div>
+        <div class="hearts">
+            <div class="heart a1"></div>
+            <div class="heart a2"></div>
+            <div class="heart a3"></div>
+        </div>
+    </div>
+</div>
+<div class="reset">
+    <button id="open" onclick="openLetter()">Abrir</button>
+    <button id="reset" onclick="resetPage()">Reiniciar</button>
+</div>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script  src="./script.js"></script>
+
+<script>
+function openLetter() {
+    $('#envelope').addClass("open").removeClass("close");
+    $('#open').hide(); // Ocultar el botón "open"
+    setTimeout(function() {
+        $('#envelope').html('<div class="blank-page"><textarea id="message" readonly placeholder="">Para el primer 14 de febrero con mi preciosa  \n\nMi amor, feliz 14 de febrero, no pudo haber mejor persona para hacerle este detalle mas que tu, gracias por quererme y aguantarme estos 4 meses, se me han ido volando y aunque a veces no sabes ni como tratarme pues aun así quiero decirte que me gustas mucho y espero pasar muchos 14 de febrero contigo, TQM 😍💕\n\nAhora una lista de lo que mas me gusta de ti para que se llene esta carta y se vea como que escribí mucho \n1. Tu hermosa carita🤤\n2. Tus hermosos ojos😍🤤\n3. Tu hermoso cabello😍\n4. Tus hermosos labios🤤🤤🥵\n5. Tus hermosos cachetes💕\n6. Tus hermosas manos💕\n7. Tus hermosos brazos💕\n8. Tu hermosa y sexy cintura💕😍😍🤤🥵\n9. Tus hermosas y sexys piernas💕🤤🤤🥵\n10. Tu hermoso ser completo 💕🥵🥵\n Los emojis que se ven es una interpretacion de como estoy cuando l@ veo/toco\n\nEstoy seguro que tienes mas coas hermosas pero esas despues me daras la dicha de verlas🥵</textarea></div>');
+        $('.blank-page').addClass('appear');
+    }, 2000); // Cambiar a 2000 para simular 2 segundos de transición
+}
+
+function resetPage() {
+    $('#envelope').removeClass("open").addClass("close");
+    $('#envelope').html(`
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+            <div class="words line1"></div>
+            <div class="words line2"></div>
+            <div class="words line3"></div>
+            <div class="words line4"></div>
+        </div>
+        <div class="hearts">
+            <div class="heart a1"></div>
+            <div class="heart a2"></div>
+            <div class="heart a3"></div>
+        </div>
+    `);
+    $('#open').show(); // Mostrar el botón "open"
+}
+</script>
+
+</body>
+</html>
